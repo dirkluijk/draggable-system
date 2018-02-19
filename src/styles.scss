@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.draggable {
+  cursor: move;
+
+  &.dragging {
+    user-select: none;
+  }
+}
+
+@import "~@angular/cdk/overlay";
+@include cdk-overlay();
+
+.cdk-overlay-pane.animated {
+  transition: margin 200ms ease-in-out;
+}
+
+.cdk-overlay-pane > * {
+  width: 100%;
+  pointer-events: none;
+}
